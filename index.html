@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Legends Info</title>
+    <style>
+        /* Global Styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a1931, #185adb);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .menu-container {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #f5a623;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #f5a623;
+            color: #fff;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.1);
+            background: #f5a623;
+            color: #1c2541;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .content-container.active {
+            display: block;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #f5a623;
+            font-size: 24px;
+            margin-right: 10px;
+            position: absolute;
+            left: -20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #f5a623;
+            color: #1c2541;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background: #ffaa00;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Halaman Menu -->
+        <div id="menu-page" class="content-container active">
+            <h1>Mobile Legends</h1>
+            <div class="menu-grid">
+                <div class="menu-item" onclick="showPage('hero-page')">Hero Populer</div>
+                <div class="menu-item" onclick="showPage('mode-page')">Mode Permainan</div>
+                <div class="menu-item" onclick="showPage('event-page')">Event Terbaru</div>
+                <div class="menu-item" onclick="showPage('rank-page')">Rank System</div>
+                <div class="menu-item" onclick="showPage('skin-page')">Skin Eksklusif</div>
+                <div class="menu-item" onclick="showPage('team-page')">Tim Esports</div>
+                <div class="menu-item" onclick="showPage('patch-page')">Patch Terbaru</div>
+                <div class="menu-item" onclick="showPage('faq-page')">FAQ</div>
+            </div>
+        </div>
+
+        <!-- Halaman Hero -->
+        <div id="hero-page" class="content-container">
+            <h1>Hero Populer</h1>
+            <p>Beberapa hero populer di Mobile Legends adalah:</p>
+            <ul>
+                <li><strong>Chou</strong>: Hero yang bisa berperan sebagai fighter, tank, dan assassin</li>
+                <li><strong>Yi Sun Shin</strong>: Hero marksman yang bisa bertarung dari jarak dekat maupun jauh </li>
+                <li><strong>Selena</strong>: Hero assassin yang kini bertransformasi menjadi hero support </li>
+                <li><strong>Arlott</strong>: Hero yang menawarkan berbagai crowd control dan damage tinggi</li>
+                <li><strong>Joy</strong>: Hero Mage/Assassin yang memiliki skill Magic Damage </li>
+                <li><strong>Lancelot</strong>: Hero assassin yang mematikan dengan damage yang terbilang tinggi  </li>
+                <li><strong>Nana</strong>: Hero support yang memiliki skillset yang annoying   </li>  
+                <li><strong>Popol dan Kupa</strong>: Hero yang bisa menyebabkan efek Crowd Control ke dua unit hero lawan saat bersamaan   </li>
+                <li><strong>X.Borg</strong>: Hero langganan banned dengan skill ultimate yang bisa membuat tim lawan kewalahan    </li>  
+            </ul>
+            <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+        </div>
+
+        <!-- Halaman Mode -->
+        <div id="mode-page" class="content-container">
+            <h1>Mode Permainan</h1>
+            <p>Mode yang bisa dimainkan:</p>
+            <ul>
+                <li><strong>Classic</strong>: Mode santai tanpa efek penurunan rank.</li>
+                <li><strong>Ranked</strong>: Mode kompetitif untuk menaikkan peringkat.</li>
+                <li><strong>Brawl</strong>: Mode cepat dengan satu jalur.</li>
+                <li><strong>Magic Chess</strong>: Mode strategi unik.</li>
+            </ul>
+            <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+        </div>
+
+        <!-- Halaman Event -->
+        <div id="event-page" class="content-container">
+            <h1>Event Terbaru</h1>
+            <p>Ikuti event seru di Mobile Legends:</p>
+            <ul>
+                <li>Skin eksklusif untuk Starlight Member.</li>
+                <li>Diskon spesial skin di akhir musim.</li>
+                <li>Event Kolaborasi dengan anime terkenal.</li>
+            </ul>
+            <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+        </div>
+
+        <!-- Halaman Rank -->
+        <div id="rank-page" class="content-container">
+            <h1>Rank System</h1>
+            <p>Sistem peringkat Mobile Legends:</p>
+            <ul>
+                <li><strong>Warrior</strong></li>
+                <li><strong>Elite</strong></li>
+                <li><strong>Master</strong></li>
+                <li><strong>Grandmaster</strong></li>
+                <li><strong>Epic</strong></li>
+                <li><strong>Mythic</strong></li>
+            </ul>
+            <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+        </div>
+
+        <!-- Halaman Skin -->
+        <div id="skin-page" class="content-container">
+            <h1>Skin Eksklusif</h1>
+            <p>Koleksi skin terbaik:</p>
+            <ul>
+                <li>Skin Collector</li>
+                <li>Skin Epic Limited</li>
+                <li>Skin Legend</li>
+            </ul>
+            <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+        </div>
+
+        <!-- Halaman Team -->
+        <div id="team-page" class="content-container">
+            <h1>Tim Esports</h1>
+            <p>Tim Esports Indonesia yang bermain Mobile Legends (ML) </p>
+            <ul>
+                <li>Team Liquid Indonesia (TLID)</li>
+                <li>Rex Regum Qeon (RRQ)</li>
+                <li>Geek Fam ID</li>
+                <li>Fnatic Onic</li>
+                <li>Evos Glory</li>
+                <li>Bigetron Alpha</li>
+                <li>Alter Ego Esports</li>
+                <li>Rebellion Esports</li>
+                <li>Dewa United Esports</li>
+                <li>AURA Fire</li>
+                
+            </ul>
+            <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+        </div>
+
+        <!-- Halaman Patch -->
+        <div id="patch-page" class="content-container">
+            <h1>Patch Terbaru</h1>
+            <p>Perubahan yang terjadi pada patch terbaru:</p>
+            <ul>
+                <li>Balance skill hero tertentu.</li>
+                <li>Peningkatan grafis.</li>
+                <li>Peningkatan grafis untuk hero lama.</li>
+                <li>Event khusus untuk perayaan akhir tahun.</li>
+        </ul>
+        <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+    </div>
+
+    <!-- Halaman FAQ -->
+    <div id="faq-page" class="content-container">
+        <h1>FAQ</h1>
+        <p>Pertanyaan yang sering diajukan tentang Mobile Legends:</p>
+        <ul>
+            <li><strong>Bagaimana cara meningkatkan rank dengan cepat?</strong><br>Pastikan bermain bersama tim, fokus pada objektif, dan pelajari hero-hero meta.</li>
+            <li><strong>Apa itu Starlight Member?</strong><br>Sebuah langganan bulanan yang memberikan hadiah eksklusif seperti skin dan efek.</li>
+            <li><strong>Bagaimana cara mendapatkan skin gratis?</strong><br>Ikuti event-event tertentu, kumpulkan fragment, atau melalui draw harian.</li>
+            <li><strong>Berapa ukuran penyimpanan untuk Mobile Legends?</strong><br>Aplikasi ini memerlukan setidaknya 4GB ruang kosong di perangkat Anda.</li>
+        </ul>
+        <a class="back-button" onclick="showPage('menu-page')">Kembali</a>
+    </div>
+</div>
+
+<script>
+    // Fungsi untuk mengganti halaman aktif
+    function showPage(pageId) {
+        const pages = document.querySelectorAll('.content-container');
+        pages.forEach(page => page.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+    }
+</script>
+</body>
+</html>
